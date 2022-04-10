@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_small"
+        android:gravity="center_vertical">
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/likedesLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_new_field_before"
+            android:padding="@dimen/padding_small">
+
+        <include
+            android:id="@+id/field_ui_header"
+            layout="@layout/layout_ui_field_header" />
+
+        <RelativeLayout
+            android:id="@+id/ldlay"
+            android:layout_below="@+id/field_ui_header"
+            android:layout_width="match_parent"
+            android:padding="@dimen/padding_small"
+            android:minHeight="@dimen/btn_h_l"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/like_btn"
+                android:src="@drawable/ic_like_border"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="@dimen/padding_large"
+                android:padding="@dimen/padding_2xsmall"
+                android:layout_alignParentStart="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"/>
+
+            <ImageButton
+                android:id="@+id/dislike_btn"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_dislike_border"
+                android:layout_toEndOf="@+id/like_btn"
+                android:padding="@dimen/padding_2xsmall"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/err_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ldlay"
+            >
+
+            <include
+                android:id="@+id/field_ui_footer"
+                layout="@layout/layout_ui_field_footer" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/field_ui_new_field_after"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/likedesLay"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/layout_new_field_item" />
+    </RelativeLayout>
+    </RelativeLayout>
+</layout>

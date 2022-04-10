@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:minHeight="@dimen/product_img_h"
+        android:paddingStart="@dimen/padding_standard"
+        android:paddingTop="@dimen/padding_large"
+        android:paddingEnd="@dimen/padding_standard"
+        android:paddingBottom="@dimen/padding_large">
+
+        <SearchView
+            android:id="@+id/city_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_standard"
+            android:background="@drawable/back_border_gray"
+            app:closeIcon="@null"
+            app:iconifiedByDefault="true"
+            app:queryBackground="@color/colorGlass"
+            app:queryHint="@string/search_in_tags" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/city_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

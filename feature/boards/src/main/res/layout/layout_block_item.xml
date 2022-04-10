@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="block"
+            type="co.formaloo.model.boards.block.Block" />
+
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/close_full_btn"
+            android:layout_width="@dimen/edt_h_l"
+            android:layout_height="@dimen/edt_h_l"
+            android:adjustViewBounds="true"
+            android:layout_margin="@dimen/padding_standard"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:srcCompat="@color/gray" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/edt_h_l"
+            android:layout_height="@dimen/edt_h_l"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_standard"
+            android:layout_marginEnd="@dimen/padding_standard"
+            android:layout_marginBottom="@dimen/padding_standard"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/padding_standard"
+            android:visibility="visible"
+            android:transitionName="MyTransition"
+            app:tint="@color/bg"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_list" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/close_full_btn"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="2"
+            android:paddingEnd="@dimen/padding_standard"
+            android:paddingVertical="@dimen/padding_standard"
+            android:text="@{block.title}"
+            android:textAlignment="textStart"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/font_large"
+            tools:targetApi="m" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:background="@color/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        tools:openDrawer="start">
+
+        <include
+            android:id="@+id/app_bar_main"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg">
+
+
+                <LinearLayout
+                    android:id="@+id/nav_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/padding_standard"
+                    android:paddingTop="@dimen/padding_standard"
+                    android:paddingRight="@dimen/padding_standard"
+                    android:paddingBottom="@dimen/padding_standard"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_large"
+                        android:layout_height="@dimen/icon_size_large"
+                        android:src="@color/appui_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="@string/app_name "
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/font_xlarge" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/markpro_bold"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/font_xlarge" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/home_btn"
+                    android:layout_below="@+id/nav_header"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg"
+                    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/close_full_btn"
+                        android:layout_width="@dimen/icon_size_standard"
+                        android:layout_height="@dimen/icon_size_standard"
+                        android:layout_centerVertical="true"
+                        android:layout_marginVertical="@dimen/padding_small"
+                        android:layout_marginStart="@dimen/padding_standard"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/circleImageView"
+                        app:srcCompat="@color/appui_color" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/icon_size_standard"
+                        android:layout_height="@dimen/icon_size_standard"
+                        android:layout_marginVertical="@dimen/padding_small"
+                        android:layout_marginStart="@dimen/padding_standard"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/padding_xsmall"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/home"
+                        android:transitionName="MyTransition"
+                        android:visibility="visible"
+                        app:tint="@color/bg" />
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/padding_small"
+                        android:layout_toEndOf="@+id/close_full_btn"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:text="@string/home"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gray2"
+                        android:textSize="@dimen/font_standard"
+                        tools:targetApi="m" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/navMore"
+                    android:layout_below="@+id/home_btn" />
+
+                <LinearLayout
+                    android:id="@+id/navMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/madeby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/padding_standard"
+                        android:paddingTop="@dimen/padding_small"
+                        android:paddingEnd="@dimen/padding_small"
+                        android:paddingBottom="@dimen/padding_small">
+
+                        <TextView
+                            android:id="@+id/made_by_txv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/made_by_desc2"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_small" />
+
+                        <ImageView
+                            android:id="@+id/iconmadeby"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/icon_size_standard"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/padding_2xsmall"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/formaloo_text_logo" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

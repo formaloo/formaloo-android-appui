@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="co.formaloo.model.form.Form" />
+
+        <variable
+            name="viewmodel"
+            type="co.formaloo.formCommon.vm.UIViewModel" />
+        <variable
+            name="listener"
+            type="co.formaloo.formCommon.listener.ViewsListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main_form_ui"
+        android:background="@color/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            app:formBack="@{form}"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shadowGlass"
+            android:clickable="true"
+            android:focusable="true">
+
+            <RelativeLayout
+                android:id="@+id/uih"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/timer_txv"
+                    style="@style/Bold"
+                    android:layout_width="@dimen/category_item_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/padding_standard"
+                    android:background="@drawable/back_border_gray"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_xsmall"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_large"
+                    android:visibility="gone" />
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ui_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/uih"
+                android:fillViewport="true"
+                android:padding="@dimen/padding_standard">
+
+                <RelativeLayout
+                    android:id="@+id/formLay"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null">
+
+                    <LinearLayout
+                        android:id="@+id/ui_head_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-16dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_small">
+
+                        <ImageView
+                            android:id="@+id/form_logo"
+                            android:layout_width="@dimen/img_size_s"
+                            android:layout_height="@dimen/img_size_s"
+                            android:layout_marginBottom="@dimen/padding_xsmall"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:src="@color/appui_color"
+                            app:imageUrlRounded="@{form.logo}" />
+
+                        <TextView
+                            android:id="@+id/form_title"
+                            style="@style/Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{form.title}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_2xlarge"
+                            app:text_color="@{form.text_color}" />
+
+                        <TextView
+                            android:id="@+id/form_desc"
+                            style="@style/Regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_xsmall"
+                            android:justificationMode="inter_word"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_xlarge"
+                            android:visibility="@{form.description!=null || form.description.length()>0 ? View.VISIBLE : View.GONE ,default=gone}"
+                            app:htmlTxt="@{form.description}"
+                            app:text_color="@{form.text_color}" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/views_rec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ui_head_lay"
+                        android:layout_marginBottom="@dimen/padding_large"
+                        android:nestedScrollingEnabled="false" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/from_submit_btn"
+                        btn_background="@{form.button_color}"
+                        text_color="@{form.submit_text_color}"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_h_l"
+                        android:layout_marginHorizontal="@dimen/padding_small"
+                        android:layout_below="@+id/views_rec"
+                        style="@style/Regular"
+                        android:text="@{form.button_text.length()>0 ?form.button_text:@string/submit,default=@string/submit}"
+                        android:textSize="@dimen/font_large"
+                        android:visibility="@{viewmodel.isLoading?View.GONE:View.VISIBLE,default=gone}" />
+
+                    <ProgressBar
+                        android:id="@+id/phoneProgress"
+                        progress_color="@{form}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/views_rec"
+                        android:layout_centerHorizontal="true"
+                        android:visibility="@{viewmodel.isLoading?View.VISIBLE:View.GONE,default=gone}" />
+
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_centerInParent="true"
+    android:id="@+id/formProgress"
+    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/timer_err_txv"
+            style="@style/Bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:paddingStart="@dimen/padding_xsmall"
+            android:paddingEnd="@dimen/padding_xsmall"
+            android:text="@string/time_has_finished"
+            android:textAlignment="gravity"
+            android:textColor="@color/colorLightGray"
+            android:textSize="@dimen/font_large"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/fullMapLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/mapToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_sv"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:visibility="gone"
+                    app:iconifiedByDefault="true"
+                    app:queryBackground="@null"
+                    app:queryHint="@string/search_hint" />
+
+                <ImageButton
+                    android:id="@+id/close_map_btn"
+                    style="@style/Regular"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/ok_map_btn"
+                    style="@style/Regular"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_check_primary"
+                    app:tint="@color/black" />
+            </RelativeLayout>
+
+
+            <fragment
+                android:id="@+id/map"
+                android:layout_below="@+id/mapToolbar"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

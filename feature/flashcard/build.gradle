@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+
+android {
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(":common")
+    implementation project(":feature:formCommon")
+    implementation project(":data:repository")
+    implementation project(":data:model")
+    implementation project(":navigate")
+    implementation "link.fls:swipestack:0.3.0"
+//    implementation "com.yuyakaido.android:card-stack-view:2.3.4"
+}

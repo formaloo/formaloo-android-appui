@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_xsmall"
+        android:background="@drawable/back_border_gray"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_xsmall">
+
+        <RelativeLayout
+            android:id="@+id/choicelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_small">
+
+            <ImageView
+                android:id="@+id/remove_choice"
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/padding_3xsmall"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_delete"
+                android:visibility="visible"
+                app:tint="@color/iconColor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/field_new_choice_layout"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/remove_choice"
+                android:layout_toEndOf="@+id/move_choice"
+                android:hint="@string/title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/field_new_choice_edt"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:gravity="start|center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/font_standard" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/move_choice"
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/padding_xsmall"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_open_menu" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/typetitle"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choicelay"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padding_small"
+            android:layout_marginBottom="@dimen/padding_xsmall"
+            android:text="@string/choice_type"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_standard" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/typetitle"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_type_number"
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:text="@string/NUMBER" />
+
+            <RadioButton
+                android:id="@+id/rb_type_text"
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:text="@string/TEXT" />
+
+            <RadioButton
+                android:id="@+id/rb_type_boolean"
+                style="@style/Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:text="@string/boolean_type" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</layout>

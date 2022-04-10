@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rows_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/padding_standard"
+    android:paddingBottom="@dimen/padding_standard"
+    android:paddingStart="@dimen/padding_standard">
+
+
+    <TextView
+        android:id="@+id/rows_number"
+        style="@style/Bold"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/padding_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_small" />
+
+    <TextView
+        android:id="@+id/rows_question_txt"
+        style="@style/Bold"
+        android:layout_toEndOf="@+id/rows_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/grade_currency_lay"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font_large" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/row_container"
+        android:layout_below="@+id/rows_question_txt"
+        android:layout_width="match_parent"
+        android:layout_toStartOf="@+id/grade_currency_lay"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:gravity="start">
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/grade_currency_lay"
+        android:layout_width="@dimen/category_item_width"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/gradev"
+            android:layout_width="1dp"
+            android:visibility="gone"
+            android:layout_toStartOf="@+id/row_garde_label"
+            android:background="@color/colorLightGray"
+            android:layout_height="@dimen/header_size"/>
+
+        <TextView
+            android:id="@+id/row_garde_label"
+
+            android:layout_width="@dimen/btn_h_l"
+            android:layout_height="wrap_content"
+            android:text="@string/dash"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal"
+            android:layout_toStartOf="@+id/currv"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_large" />
+
+        <View
+            android:id="@+id/currv"
+            android:layout_width="1dp"
+            android:visibility="gone"
+            android:layout_toStartOf="@+id/row_currency_txt"
+            android:background="@color/colorLightGray"
+            android:layout_height="@dimen/header_size"/>
+
+        <TextView
+            android:id="@+id/row_currency_txt"
+
+            android:layout_width="@dimen/btn_h_l"
+            android:layout_height="wrap_content"
+            android:text="@string/dash"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_large" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

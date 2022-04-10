@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/report_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:focusable="true">
+
+
+    <com.anychart.AnyChartView
+        android:id="@+id/any_chartView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="-24dp"
+        android:background="@color/white"
+        android:layout_below="@+id/layout_bar_charts_chart"
+        android:layout_height="24dp"/>
+</LinearLayout>
+

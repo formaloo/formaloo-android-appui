@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="co.formaloo.model.form.Form" />
+
+        <variable
+            name="listener"
+            type="co.formaloo.formCommon.listener.ViewsListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main_form_ui"
+        android:background="@color/bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            app:formBack="@{form}"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shadowGlass"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ui_sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:padding="@dimen/padding_standard">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/views_rec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_large"
+                        android:nestedScrollingEnabled="false" />
+
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/fullMapLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/mapToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_sv"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:visibility="gone"
+                    app:iconifiedByDefault="true"
+                    app:queryBackground="@null"
+                    app:queryHint="@string/search_hint" />
+
+                <ImageButton
+                    android:id="@+id/close_map_btn"
+                    style="@style/Regular"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/ok_map_btn"
+                    style="@style/Regular"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_check_primary"
+                    app:tint="@color/black" />
+            </RelativeLayout>
+
+
+            <fragment
+                android:id="@+id/map"
+                android:layout_below="@+id/mapToolbar"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

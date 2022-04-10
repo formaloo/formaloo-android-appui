@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/phoneLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_new_field_before"
+            android:padding="@dimen/padding_small">
+
+        <include
+            android:id="@+id/field_ui_header"
+            layout="@layout/layout_ui_field_header" />
+
+        <RelativeLayout
+            android:id="@+id/verify_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_header">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_value_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/verifyBtnlay"
+                android:background="@android:color/transparent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_edt"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="phone"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="@dimen/btn_h"
+                    android:textAlignment="gravity"
+                    android:textSize="@dimen/font_large" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/verifyBtnlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/padding_small">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/verify_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_h"
+                    android:layout_marginEnd="@dimen/padding_small"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="@dimen/padding_xsmall"
+                    android:paddingEnd="@dimen/padding_xsmall"
+                    style="@style/Regular"
+                    android:text="@string/verify_phone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/pin_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_h_l"
+                    android:textCursorDrawable="@color/colorLightGray"
+                    android:layout_alignParentStart="true"
+                    android:digits="1234567890"
+                    android:layout_marginEnd="@dimen/padding_small"
+                    android:focusableInTouchMode="true"
+                    android:maxLength="6"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:textSize="@dimen/font_large"
+                    android:inputType="number"/>
+
+                <ProgressBar
+                    android:id="@+id/phoneProgress"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/err_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/verify_lay">
+
+            <include
+                android:id="@+id/field_ui_footer"
+                layout="@layout/layout_ui_field_footer" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/field_ui_new_field_after"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/phoneLay"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/layout_new_field_item" />
+    </RelativeLayout>
+    </RelativeLayout>
+</layout>

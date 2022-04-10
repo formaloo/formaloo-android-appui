@@ -1,0 +1,24 @@
+rootProject.name = "LearningApp"
+include ':data'
+include ':common'
+include ':feature'
+include ':feature:flashcard'
+include ':app'
+include ':feature:boards'
+include ':data:local'
+include ':data:remote'
+include ':data:model'
+include ':data:repository'
+include ':feature:home'
+include ':navigate'
+//
+//include ':fields'
+//project(':fields').projectDir = file('C:\\Users\\Idearun\\StudioProjects\\super_app\\features\\formbuilder\\formui\\formFields')
+
+
+include ':feature:formui'
+include ':feature:formCommon'
+include ':feature:formui:displayform'
+include ':feature:formui:formFields'
+include ':feature:formResponses'
+

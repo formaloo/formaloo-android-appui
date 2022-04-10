@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/arrowimv"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="2"
+                android:padding="@dimen/padding_standard"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray2"
+                android:textSize="@dimen/font_large"
+                android:textStyle="bold"
+                tools:targetApi="m" />
+
+            <ImageView
+                android:id="@+id/arrowimv"
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:padding="@dimen/padding_small"
+                android:layout_centerVertical="true"
+                android:src="@drawable/left_arrow" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/groupBlocksRv"
+            android:layout_margin="@dimen/padding_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header" />
+
+
+    </RelativeLayout>
+</layout>

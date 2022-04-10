@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_xsmall"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/padding_2xsmall"
+    android:paddingTop="@dimen/padding_xsmall"
+    android:paddingEnd="@dimen/padding_2xsmall">
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/select_tag_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/icon_size_standard"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+
+        android:layout_marginEnd="@dimen/padding_2xsmall"
+        android:layout_toStartOf="@+id/tag_color_card" />
+
+    <TextView
+        android:id="@+id/tag_title_txv"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/tag_color_imv"
+        android:layout_toEndOf="@+id/select_tag_check_box"
+        android:ellipsize="end"
+        android:text="@string/title"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font_standard"
+        android:visibility="gone" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/tag_color_imv"
+        android:layout_width="@dimen/btn_h"
+        android:layout_height="@dimen/padding_xsmall"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+
+        android:scaleType="centerCrop"
+        android:src="?attr/colorPrimary"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag_color_card"
+        android:layout_width="@dimen/btn_h"
+        android:layout_height="@dimen/padding_xsmall"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="?attr/colorPrimary"
+        app:cardCornerRadius="@dimen/btn_radios_standard" />
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_bar_charts_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/product_img_h"
+        android:layout_marginTop="@dimen/padding_xsmall"
+        android:layout_marginBottom="@dimen/padding_standard"
+        android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/layout_bar_charts_choice_title"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:padding="@dimen/padding_standard"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_standard" />
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="wrap_content">
+
+   <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/submit_pagination_number_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/font_standard" />
+</RelativeLayout>

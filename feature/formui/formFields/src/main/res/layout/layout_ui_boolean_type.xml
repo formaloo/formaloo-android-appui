@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/type_check_box"
+        style="@style/Regular"
+        android:layout_width="@dimen/icon_size_large"
+        android:layout_height="@dimen/icon_size_large" />
+</layout>

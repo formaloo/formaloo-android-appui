@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:id="@+id/kanbanlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.woxthebox.draglistview.BoardView
+            android:id="@+id/board_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_standard"
+            android:paddingVertical="@dimen/padding_small"
+            app:boardEdges="@dimen/padding_xsmall"
+            app:columnSpacing="@dimen/padding_small" />
+
+
+        <RelativeLayout
+            android:id="@+id/content_detail_lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            android:clickable="true"
+            android:visibility="gone"
+            android:focusable="true">
+
+            <include layout="@layout/layout_kanban_content_detail" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fileLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_new_field_before"
+            android:padding="@dimen/padding_small">
+
+            <include
+                android:id="@+id/field_ui_header"
+                layout="@layout/layout_ui_field_header" />
+
+            <RelativeLayout
+                android:id="@+id/err_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/file_btn">
+
+                <include
+                    android:id="@+id/field_ui_footer"
+                    layout="@layout/layout_ui_field_footer" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/file_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/field_ui_header"
+                android:minHeight="@dimen/btn_h_l"
+                android:padding="@dimen/padding_xsmall">
+
+                <TextView
+                    android:id="@+id/key_txv"
+                    style="@style/Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:text="@string/click_to_upload_file"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_large" />
+
+                <TextView
+                    android:id="@+id/desc_txv"
+                    style="@style/Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/key_txv"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_xsmall"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/font_standard"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/file_txv"
+                    style="@style/Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc_txv"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_xsmall"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/font_standard"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/remove_file_btn"
+                    android:layout_width="@dimen/icon_size_standard"
+                    android:layout_height="@dimen/icon_size_standard"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fileLay"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

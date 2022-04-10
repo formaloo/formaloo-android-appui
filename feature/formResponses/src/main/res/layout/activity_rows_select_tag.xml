@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+    android:id="@+id/activity_select_tag"
+                android:focusable="true"
+                android:padding="@dimen/padding_small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatButton
+
+
+            android:text="@string/add_new_tag"
+            android:layout_width="wrap_content"
+            android:id="@+id/select_tag_add_new_tag_btn"
+            android:background="@null"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="@dimen/padding_xsmall"
+            android:textColor="@color/colorBlack"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="@dimen/padding_xsmall"
+            android:layout_height="@dimen/btn_h_l"/>
+
+    <SearchView
+            android:layout_below="@+id/select_tag_add_new_tag_btn"
+            android:layout_width="match_parent"
+            android:id="@+id/select_tags_search_view"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_border_gray"
+            app:queryBackground="@color/colorGlass"
+            app:iconifiedByDefault="false"
+            app:closeIcon="@null"
+            app:queryHint="@string/search_in_tags"
+            android:layout_marginBottom="@dimen/padding_small"/>
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/tag_all_check_box"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:visibility="gone"
+            android:layout_below="@+id/select_tags_search_view"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_above="@+id/select_Tag_btn"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tag_all_check_box"
+            android:layout_marginBottom="@dimen/padding_small"
+            android:layout_height="@dimen/product_img_h"
+            android:id="@+id/select_tag_recycler"/>
+
+    <Button
+        android:id="@+id/select_Tag_btn"
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_h_l"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/padding_standard"
+        android:background="@drawable/back_fill_accent"
+        android:text="@string/save"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_large"
+ />
+
+</RelativeLayout>

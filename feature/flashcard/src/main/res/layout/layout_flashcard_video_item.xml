@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="field"
+            type="co.formaloo.model.form.Fields" />
+
+        <variable
+            name="viewmodel"
+            type="co.formaloo.flashcard.viewmodel.UIViewModel" />
+
+        <variable
+            name="form"
+            type="co.formaloo.model.form.Form" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_small">
+
+        <include
+            android:id="@+id/field_ui_header"
+            layout="@layout/layout_flashcard_field_header" />
+
+        <WebView
+            android:id="@+id/videoview"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/padding_standard"
+            android:layout_height="@dimen/slider_size"
+            android:padding="@dimen/padding_standard"
+            app:field_background="@{form}" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/open_full_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_h_l"
+            android:background="@null"
+            android:textSize="@dimen/font_standard"
+            android:textColor="@color/colorBlack"
+            android:text="Full screen" />
+    </LinearLayout>
+
+</layout>

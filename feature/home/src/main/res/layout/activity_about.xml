@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/bg"
+		android:gravity="start"
+		android:orientation="vertical"
+		android:padding="@dimen/padding_standard">
+
+		<WebView
+			android:layout_width="match_parent"
+			android:layout_above="@+id/made_by_txv"
+			app:loadData="@{@string/app_desc}"
+			android:layout_height="match_parent"/>
+		
+		
+		<TextView
+			android:id="@+id/made_by_txv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_gravity="center_horizontal|bottom"
+			android:background="@color/bg"
+			android:paddingTop="@dimen/padding_2xsmall"
+			android:paddingBottom="@dimen/padding_small"
+			android:text="@string/made_by_desc3"
+			android:textAlignment="center"
+			android:textSize="@dimen/font_small"
+			app:movementMethod="@{true}" />
+		
+	</RelativeLayout>
+</layout>

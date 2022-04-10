@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+    android:padding="@dimen/padding_small"
+        android:layout_height="@dimen/amount_card"
+        android:background="@color/bg">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/close_full_btn"
+            android:layout_width="@dimen/edt_h_l"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_marginEnd="@dimen/padding_small"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:srcCompat="@color/white" />
+
+
+        <View
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_h_s"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/close_full_btn"
+            android:background="@color/white"
+            android:paddingEnd="@dimen/padding_standard"
+            android:paddingVertical="@dimen/padding_standard" />
+
+    </RelativeLayout>

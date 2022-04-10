@@ -1,0 +1,3 @@
+BASE_URL:"https://api.formaloo.net/"
+X_API_KEY:"key_gAAAAABiUmc8G2R-1yfAPko4Y9KKo_paclldf1z1jmHLjDu4cKav_M4Z_JPS_aotlSAvgGe1vGY_og1cYAuMl8VNnqo8UgwZUhpTdQbL8BX6q7m40AC2MCxy0Kzbjl5zYCdu8y8RvT1qsBicQDwyiW9uVMbeODM0Kg=="
+APPUI_ADDRESS="YD7L3lG1LVFELz1"

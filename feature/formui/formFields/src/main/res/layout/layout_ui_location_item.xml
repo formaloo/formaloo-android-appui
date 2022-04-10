@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/location_field_lay"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+
+        <include
+            android:id="@+id/field_ui_header"
+            layout="@layout/layout_ui_field_header" />
+
+        <RelativeLayout
+            android:id="@+id/loclay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_header"
+            android:minHeight="@dimen/btn_h_l"
+            android:padding="@dimen/padding_xsmall">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/locationFullBtn"
+                android:text="@string/full_screen_map"
+                android:textSize="@dimen/font_large"
+                style="@style/Regular"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <co.formaloo.formfields.CustomMapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/img_size_l"
+                android:nestedScrollingEnabled="false" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/err_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loclay"
+            >
+
+            <include
+                android:id="@+id/field_ui_footer"
+                layout="@layout/layout_ui_field_footer" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

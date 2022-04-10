@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="co.formaloo.boards.BoardFragment">
+        <action
+            android:id="@+id/action_boardFragment_to_responsesFragment"
+            app:destination="@id/nav_response"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/home">
+            <argument
+                android:name="formSlug"
+                app:argType="string" />
+
+            <argument
+                android:name="blockSlug"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_boardFragment_to_chartsFragment"
+            app:destination="@id/nav_charts"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/home">
+            <argument
+                android:name="formSlug"
+                app:argType="string" />
+
+            <argument
+                android:name="formName"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_boardFragment_to_homeFragment"
+            app:destination="@id/nav_flashcard"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/home">
+            <argument
+                android:name="formSlug"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/nav_response" />
+    <include app:graph="@navigation/nav_flashcard" />
+    <include app:graph="@navigation/nav_charts" />
+
+</navigation>

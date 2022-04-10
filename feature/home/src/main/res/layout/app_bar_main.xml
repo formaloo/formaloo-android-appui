@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        android:fitsSystemWindows="false"
+        tools:context="co.formaloo.flashcard.co.idearun.home.HomeActivity">
+
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg"
+            android:theme="@style/Theme.DrawerApp.AppBarOverlay"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_marginTop="@dimen/padding_xsmall"
+                android:layout_marginBottom="@dimen/padding_xsmall"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginEnd="@dimen/padding_standard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_h_l"
+                android:elevation="1dp"
+                android:background="@drawable/back_appbar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/Theme.DrawerApp.PopupOverlay"
+                tools:targetApi="lollipop" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <FrameLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <TextView
+            android:id="@+id/made_by_txv"
+            android:textAlignment="center"
+            android:paddingTop="@dimen/padding_2xsmall"
+            android:paddingBottom="@dimen/padding_small"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_height="wrap_content"
+            android:background="@color/bg"
+            android:textSize="@dimen/font_small"
+            android:text="@string/made_by_desc"
+            android:textColor="@color/gray2" />
+
+    </LinearLayout>
+</layout>

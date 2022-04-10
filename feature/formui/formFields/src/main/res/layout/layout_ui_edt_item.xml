@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+        android:id="@+id/editlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/editLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_new_field_before"
+            android:padding="@dimen/padding_small">
+
+            <include
+                android:id="@+id/field_ui_header"
+                layout="@layout/layout_ui_field_header" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_value_layout"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/field_ui_header"
+                android:layout_alignParentStart="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/value_edt"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="@dimen/btn_h_l"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/font_large" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/err_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edt_value_layout"
+                >
+
+                <include
+                    android:id="@+id/field_ui_footer"
+                    layout="@layout/layout_ui_field_footer" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editLay"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

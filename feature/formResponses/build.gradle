@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+    testOptions {
+        animationsDisabled = true
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+        exclude 'META-INF/main.kotlin_module'
+        exclude 'META-INF/remote_debug.kotlin_module'
+
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+    }
+}
+
+dependencies {
+
+//    implementation project(Modules.features)
+    implementation project(":feature:formCommon")
+
+    implementation project(":common")
+    implementation project(":data:repository")
+    implementation project(":data:model")
+    implementation project(":navigate")
+
+    
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+
+
+}

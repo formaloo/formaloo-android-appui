@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_xsmall"
+        android:background="@drawable/back_border_gray"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_xsmall">
+
+        <ImageView
+            android:id="@+id/remove_choice"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/padding_3xsmall"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_delete"
+            android:visibility="visible"
+            app:tint="@color/iconColor" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/choice_img"
+            android:layout_width="@dimen/btn_h_l"
+            android:layout_height="@dimen/btn_h_l"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/remove_choice"
+            android:background="@null"
+            android:padding="@dimen/padding_small"
+            android:scaleType="fitCenter"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+           />
+
+        <ImageView
+            android:id="@+id/remove_image"
+            android:layout_width="@dimen/icon_size_small"
+            android:layout_height="@dimen/icon_size_small"
+            android:layout_toEndOf="@+id/field_new_choice_layout"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_delete"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/save_edit_choice"
+            android:layout_width="@dimen/icon_size_standard"
+            android:layout_height="@dimen/icon_size_standard"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/choice_img"
+            android:background="@null"
+            android:padding="@dimen/padding_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_check_primary"
+            android:visibility="gone" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_new_choice_layout"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:hint="@string/title"
+            android:layout_toStartOf="@+id/choice_img"
+            android:layout_toEndOf="@+id/move_choice">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/field_new_choice_edt"
+                style="@style/Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorPrimary"
+                android:gravity="start|center_vertical"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/font_standard" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/move_choice"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/padding_xsmall"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_open_menu" />
+
+    </RelativeLayout>
+
+</layout>

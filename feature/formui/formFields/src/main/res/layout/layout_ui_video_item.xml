@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/video_field_lay"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+
+        <include
+            android:id="@+id/field_ui_header"
+            layout="@layout/layout_ui_field_header" />
+
+        <RelativeLayout
+            android:id="@+id/vlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/field_ui_header"
+            android:minHeight="@dimen/btn_h_l"
+            android:padding="@dimen/padding_xsmall">
+
+            <WebView
+                android:id="@+id/videoview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/slider_size" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/err_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vlay">
+
+            <include
+                android:id="@+id/field_ui_footer"
+                layout="@layout/layout_ui_field_footer" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

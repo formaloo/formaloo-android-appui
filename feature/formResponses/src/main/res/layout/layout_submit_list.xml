@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_xsmall"
+    android:paddingEnd="@dimen/padding_xsmall">
+
+    <LinearLayout
+        android:padding="@dimen/padding_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/submit_header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_standard"
+            android:layout_marginBottom="@dimen/padding_standard"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35"
+                android:gravity="start"
+                android:text="#"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_standard" />
+
+            <TextView
+                android:id="@+id/submit_header_question"
+                style="@style/Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:layout_marginEnd="@dimen/padding_standard"
+                android:gravity="center_vertical|start"
+                android:maxLines="1"
+                android:text="@string/dash"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_standard" />
+
+            <TextView
+                android:id="@+id/submit_header_question2"
+                style="@style/Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:gravity="center_vertical|start"
+                android:maxLines="1"
+                android:text="@string/dash"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_standard" />
+
+            <TextView
+                android:id="@+id/submit_header_question3"
+                style="@style/Bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:layout_marginStart="@dimen/padding_small"
+                android:gravity="center_vertical|start"
+                android:maxLines="1"
+                android:text="@string/dash"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_standard" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/submit_header_creation_date"-->
+<!--                -->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="end"-->
+<!--                android:visibility="gone"-->
+<!--                android:text="@string/submit_date"-->
+<!--                android:textAlignment="viewEnd"-->
+<!--                android:textColor="@color/colorBlack"-->
+<!--                android:textSize="@dimen/font_standard" />-->
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/submit_border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGray" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/submit_recycler_view"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>

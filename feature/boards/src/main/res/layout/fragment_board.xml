@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/boardsRefreshLay"
+        android:background="@color/bg"
+        android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/lesson_inprogress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/lesson_inprogress" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/padding_standard"
+                android:layout_marginTop="@dimen/padding_3xlarge"
+                android:text="@string/your_lessons"
+                android:textColor="@color/gray1"
+                android:textSize="@dimen/font_standard"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/statlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_standard"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray2"
+                    android:textSize="@dimen/font_large"
+                    android:textStyle="bold"
+                    tools:targetApi="m" />
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="2dp">
+
+                    <LinearLayout
+                        android:background="@drawable/back_fill_white"
+                        android:layout_width="0dp"
+                        android:visibility="gone"
+                        android:id="@+id/totalVisitLay"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:paddingStart="@dimen/padding_standard"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_xsmall">
+
+                        <TextView
+                            android:id="@+id/total_visit_txv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_standard"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_large"
+                            android:textStyle="bold"
+                            tools:targetApi="m" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:text="@string/total_visit"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_standard"
+                            tools:targetApi="m" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:background="@drawable/back_fill_white"
+                        android:paddingStart="@dimen/padding_standard"
+                        android:id="@+id/totalSubmitLay"
+                        android:visibility="gone"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_xsmall">
+
+                        <TextView
+                            android:id="@+id/total_submits_txv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_standard"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_large"
+                            android:textStyle="bold"
+                            tools:targetApi="m" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:text="@string/total_submits"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_standard"
+                            tools:targetApi="m" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:background="@drawable/back_fill_white"
+                        android:paddingStart="@dimen/padding_standard"
+                        android:id="@+id/dailyVisitLay"
+                        android:visibility="gone"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_xsmall">
+
+                        <TextView
+                            android:id="@+id/daily_visit_txv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_standard"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_large"
+                            android:textStyle="bold"
+                            tools:targetApi="m" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:text="@string/daily_visit"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_standard"
+                            tools:targetApi="m" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:background="@drawable/back_fill_white"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:id="@+id/dailySubmitLay"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:paddingStart="@dimen/padding_standard"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_xsmall">
+
+                        <TextView
+                            android:id="@+id/daily_submits_txv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_standard"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_large"
+                            android:textStyle="bold"
+                            tools:targetApi="m" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:text="@string/daily_submits"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/gray2"
+                            android:textSize="@dimen/font_standard"
+                            tools:targetApi="m" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menublocksRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

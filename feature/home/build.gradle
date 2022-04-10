@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_commons.gradle'
+
+android {
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(":common")
+    implementation project(":data:repository")
+    implementation project(":data:model")
+    implementation project(":feature:flashcard")
+    implementation project(":feature:boards")
+    implementation project(":navigate")
+    implementation project(":feature:formCommon")
+    implementation project(":feature:formui:displayform")
+    implementation project(":feature:formui:formFields")
+    implementation project(":feature:formResponses")
+
+}

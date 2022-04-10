@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/row_nested"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGlass">
+
+            <RelativeLayout
+                android:id="@+id/row_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/row_data_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_standard"
+                    android:background="@drawable/back_border_gray"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_standard">
+
+                    <RelativeLayout
+                        android:id="@+id/submit_user_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/user"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+
+                        <TextView
+                            android:id="@+id/row_user_label"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/dash"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/creation_date"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+
+                        <TextView
+                            android:id="@+id/row_date_label"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/dash"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/padding_small"
+                            android:text="@string/grade"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+
+                        <TextView
+                            android:id="@+id/row_garde_label"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/dash"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/row_currency_label"
+                            style="@style/Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/padding_small"
+                            android:text="@string/price"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+
+                        <TextView
+                            android:id="@+id/row_currency_txt"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/dash"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_large" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/row_label"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/row_data_card"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/padding_standard"
+                    android:text="@string/user_submits"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_large" />
+
+                <RelativeLayout
+                    android:id="@+id/grade_currency_lay"
+                    android:layout_width="@dimen/category_item_width"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/row_data_card"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/padding_standard">
+
+
+                    <TextView
+                        android:id="@+id/garde_label"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/currency_txt"
+                        android:gravity="center_horizontal"
+                        android:text="@string/grade"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/font_large" />
+
+
+                    <TextView
+                        android:id="@+id/currency_txt"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/price"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/font_large" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/row_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/grade_currency_lay"
+                    android:layout_marginStart="@dimen/padding_standard"
+                    android:layout_marginTop="@dimen/padding_standard"
+                    android:layout_marginEnd="@dimen/padding_standard"
+                    android:layout_marginBottom="@dimen/padding_standard"
+                    android:background="@drawable/back_border_gray" />
+
+                <RelativeLayout
+                    android:id="@+id/row_tag_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/row_recycler_view"
+                    android:layout_margin="@dimen/padding_standard"
+                    android:background="@drawable/back_border_gray"
+                    android:padding="@dimen/padding_standard">
+
+                    <TextView
+                        android:id="@+id/row_new_tag_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_small"
+                        android:drawablePadding="@dimen/padding_small"
+                        android:text="@string/add_new_tag"
+                        app:drawableStartCompat="@drawable/ic_add" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/row_tag_rv"
+                        android:layout_below="@+id/row_new_tag_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/row_tags_empty_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_below="@+id/row_new_tag_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/tags_are_empty" />
+
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/progress_wheel"
+                    android:layout_width="@dimen/icon_size_large"
+                    android:layout_height="@dimen/icon_size_large"
+                    android:layout_centerInParent="true"
+                    android:elevation="3dp"
+                    android:visibility="visible"/>
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/pdfLoading"
+            layout="@layout/layout_shadow_loading"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</layout>

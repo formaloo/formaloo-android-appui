@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.formaloo.formCommon">
+
+    <application>
+        <activity android:name="co.formaloo.formCommon.FullScreenWebViewActivity"
+            android:screenOrientation="landscape"/>
+    </application>
+</manifest>

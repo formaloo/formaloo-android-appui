@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/seclay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_large"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/btn_h_l"
+        android:padding="@dimen/padding_small">
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sectionLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/field_ui_new_field_before"
+            android:padding="@dimen/padding_small">
+
+            <include
+                android:id="@+id/field_ui_header"
+                layout="@layout/layout_ui_field_header" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/field_ui_new_field_after"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sectionLay"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_new_field_item" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>
