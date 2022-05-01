@@ -1,6 +1,6 @@
 # AppUI Sample Application
 This is an open-source project to display how you can create your own custom AppUI application within a few minutes.
-I have already created an AppUI [click to see Sample AppUi on your browser](https://app.formaloo.net/YD7L3lG1LVFELz1). 
+I have already created an AppUI [click to see Sample AppUi on your browser](https://app.formaloo.net/YD7L3lG1LVFELz1).
 
 <img src="images/app-ui-address.png" width="500" >
 
@@ -30,24 +30,38 @@ Now Define build configuration fields in the Gradle file. These constants will b
 
 <img src="images/api-propertis-gradle.png" width="500" >
 
-Your Application is almost ready, you just need some customization like colors, app name, etc:
+Your Application is almost ready.
+
+You just need some customization like colors, app name, etc.
+If you are new to android you can use following steps to customize your project:
+
+# Color, name
 Find the res/value folder under the common module and open the color file to change app primary color that uses appui_color:
 
 <img src="images/common_colors.png" width="500" >
 
 in that folder, we have also another file named strings, you can find app-name and change the name of your application.
 
+# Font
+
+To change the font we need a font folder in the res folder under the common module. Paste font files into the font folder. in the res folder there is another file named theme. Open them and change font family.
+Check the image for the entire steps:
+
+<img src="images/font1.png" width="500" >
+<img src="images/font2.png" width="500" >
+<img src="images/font3.png" width="500" >
+
+# Application id
 The last item you need to change to have your own application is the package name and application id, follow the images to rename the ids:
 
 1. <img src="images/package-name.png" height="400" >
 2. <img src="images/app-id.png" height="400" >
 
-We are done, our appUI is ready :)
 
+We are done, our appUI is ready :)
 Run the project and test the application.
 
-
-
+# AppUI API
 If you want to play with AppUI API and have a more desired application you can find endpoints inside BoardsService under the data/remote module.
 
 <img src="images/board_services.png" width="500" >
